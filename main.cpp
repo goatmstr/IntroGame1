@@ -57,12 +57,12 @@ float g_previous_ticks = 0.0f;
 
 GLuint g_player_texture_id;
 GLuint g_weapon_texture_id;
-const int NUMBER_OF_TEXTURES = 1; // to be generated, that is
+const int NUMBER_OF_TEXTURES = 2; // to be generated, that is
 const GLint LEVEL_OF_DETAIL = 0; // base image level; Level n is the nth mipmap reduction image
 const GLint TEXTURE_BORDER = 0; // this value MUST be zero
 
-const char PLAYER_SPRITE_FILEPATH[] = "assets/mario.jpg";
-const char WEAPON_SPRITE_FILEPATH[] = "assets/sword.jpg";
+const char PLAYER_SPRITE_FILEPATH[] = "assets/mario.png";
+const char WEAPON_SPRITE_FILEPATH[] = "assets/sword.png";
 
 SDL_Window* displayWindow;
 bool gameIsRunning = true;
@@ -159,15 +159,22 @@ int main(int argc, char* argv[]) {
 		// START OF RENDER
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		float vertices[] =
-		{
-			 0.5f, -0.5f,
-			 0.0f,  0.5f,
-			-0.5f, -0.5f
+		float vertices[] = {
+		-0.5f, -0.5f, 0.5f, -0.5f, 0.5f, 0.5f,  // triangle 1
+		-0.5f, -0.5f, 0.5f, 0.5f, -0.5f, 0.5f   // triangle 2
+		};
+
+
+		float texture_coordinates[] = {
+		0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f,     // triangle 1
+		0.0f, 1.0f, 1.0f, 0.0f, 0.0f, 0.0f,     // triangle 2
 		};
 
 		glVertexAttribPointer(g_program.positionAttribute, 2, GL_FLOAT, false, 0, vertices);
 		glEnableVertexAttribArray(g_program.positionAttribute);
+
+		glVertexAttribPointer(g_program.texCoordAttribute, 2, GL_FLOAT, false, 0, texture_coordinates);
+		glEnableVertexAttribArray(g_program.texCoordAttribute);
 
 		draw_object(g_model_matrix, g_player_texture_id);
 		draw_object(g_other_model_matrix, g_weapon_texture_id);
