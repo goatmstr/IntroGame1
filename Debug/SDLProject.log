@@ -1,2 +1,6 @@
 ﻿  main.cpp
+C:\Users\hbpan\Documents\code\IntroGame\IntroGame1\SDLProject\main.cpp(38,26): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\hbpan\Documents\code\IntroGame\IntroGame1\SDLProject\main.cpp(39,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\hbpan\Documents\code\IntroGame\IntroGame1\SDLProject\main.cpp(40,18): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\hbpan\Documents\code\IntroGame\IntroGame1\SDLProject\main.cpp(41,20): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   SDLProject.vcxproj -> C:\Users\hbpan\Documents\code\IntroGame\IntroGame1\SDLProject\Debug\SDLProject.exe

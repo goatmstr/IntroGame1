@@ -31,4 +31,12 @@
     <CopyFileToFolders Include="glew32.dll" />
     <CopyFileToFolders Include="SDL2.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\mario.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\sword.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>
